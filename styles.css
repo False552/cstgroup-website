@@ -640,13 +640,13 @@ html {
     }
 
     .logo-image {
-        height: 150px;
-        width: 150px;
-        max-width: 150px;
+        height: 200px;
+        width: 200px;
+        max-width: 200px;
     }
 
     .retail .logo-image {
-        max-width: 120px;
-        max-height: 50px;
+        max-width: 200px;
+        max-height: 200px;
     }
 }
