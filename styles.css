@@ -1,18 +1,16 @@
-*,
-*::before,
-*::after {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
-div {
-    margin: 0px;
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
     font-family: Inter, Arial;
 }
 
-body {
-    margin: 0px;
-    padding: 0px;
-    overflow-x: hidden;
+html {
+    scroll-behavior: smooth;
 }
 
 .hero {
@@ -105,6 +103,7 @@ body {
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
+    text-align: center;
     background: linear-gradient(90deg, #337AB6 0%, #337AB6 25%, #B83DBA 40%, #B83DBA 65%, #E879F9 80%, #E879F9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -129,7 +128,7 @@ body {
     align-items: center;
     gap: 10px;
     position: absolute;
-    bottom: 30px;
+    bottom: calc(30px + env(safe-area-inset-bottom));
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
@@ -150,7 +149,6 @@ body {
     60% { transform: translateX(-50%) translateY(-5px); }
 }
 
-/* BUSINESS SELECTION SECTION */
 .business-selection {
     min-height: 100vh;
     padding: 5rem 2rem;
@@ -257,7 +255,6 @@ body {
     width: 100%;
 }
 
-/* BUSINESS CARDS WITH ANIMATIONS */
 .business-card:nth-child(1) {
     animation: slideInLeft 1s ease-out 0.6s both;
 }
@@ -373,7 +370,6 @@ body {
         inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
-/* ANIMATION KEYFRAMES */
 @keyframes borderGlow {
     0%, 100% {
         opacity: 0.8;
@@ -454,11 +450,10 @@ body {
     flex-grow: 1;
 }
 
-/* LOGOS WITH ANIMATIONS */
 .logos {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 2rem;
     margin-bottom: 2.5rem;
     padding: 1rem 0;
@@ -467,9 +462,9 @@ body {
 }
 
 .logo-image {
-    height: 50px;
-    width: auto;
-    max-width: 150px;
+    height: 300px;
+    width: 300px;
+    max-width: 300px;
     object-fit: contain;
     margin: 20px auto;
     display: block;
@@ -482,8 +477,8 @@ body {
 }
 
 .retail .logo-image {
-    max-width: 120px;
-    max-height: 45px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .retail .logo-image:nth-child(2) {
@@ -506,7 +501,6 @@ body {
     }
 }
 
-/* BUTTONS WITH ANIMATIONS */
 .cta-button {
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
     color: white;
@@ -525,6 +519,7 @@ body {
     box-shadow: 0 4px 16px rgba(30, 41, 59, 0.3);
     margin: 0 auto;
     animation: buttonPulse 2s ease-in-out 1.8s both, fadeInUp 0.8s ease-out 1.6s both;
+    text-decoration: none;
 }
 
 .construction .cta-button {
@@ -559,7 +554,6 @@ body {
     }
 }
 
-/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .title {
         font-size: 2.5rem;
@@ -591,9 +585,4 @@ body {
         flex-direction: column;
         gap: 10px;
     }
-}
-
-/* SMOOTH SCROLLING */
-html {
-    scroll-behavior: smooth;
 }
