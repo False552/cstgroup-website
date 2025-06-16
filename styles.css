@@ -128,7 +128,7 @@ html {
     align-items: center;
     gap: 10px;
     position: absolute;
-    bottom: calc(30px + env(safe-area-inset-bottom));
+    bottom: 30px;
     left: 50%;
     transform: translateX(-50%);
     animation: bounce 2s infinite;
@@ -441,7 +441,7 @@ html {
 .business-card p {
     color: #475569;
     font-size: 1.15rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 1.5rem;
     line-height: 1.7;
     position: relative;
     z-index: 2;
@@ -455,8 +455,8 @@ html {
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    padding: 0px;
     margin-bottom: 2.5rem;
-    padding: 1rem 0;
     position: relative;
     z-index: 2;
 }
@@ -466,7 +466,7 @@ html {
     width: 300px;
     max-width: 300px;
     object-fit: contain;
-    margin: 20px auto;
+    margin: 10px auto;
     display: block;
     transition: all 0.3s ease;
     animation: logoFadeIn 0.8s ease-out 1.2s both;
@@ -554,6 +554,7 @@ html {
     }
 }
 
+/* Mobile styles */
 @media (max-width: 768px) {
     .title {
         font-size: 2.5rem;
@@ -561,6 +562,11 @@ html {
             
     .subtitle {
         font-size: 1.1rem;
+    }
+
+    /* Fix scroll container for mobile */
+    .scroll-container {
+        bottom: 80px; /* Increased spacing for mobile */
     }
             
     .business-cards {
@@ -584,5 +590,37 @@ html {
     .logos {
         flex-direction: column;
         gap: 10px;
+    }
+
+    /* Fix logo sizes for mobile */
+    .logo-image {
+        height: 120px;
+        width: 120px;
+        max-width: 120px;
+    }
+
+    .retail .logo-image {
+        max-width: 100px;
+        max-height: 40px;
+        height: auto;
+        width: auto;
+    }
+}
+
+/* Additional mobile fix for very small screens */
+@media (max-width: 480px) {
+    .scroll-container {
+        bottom: 100px; /* Even more spacing for very small screens */
+    }
+
+    .logo-image {
+        height: 100px;
+        width: 100px;
+        max-width: 100px;
+    }
+
+    .retail .logo-image {
+        max-width: 80px;
+        max-height: 30px;
     }
 }
