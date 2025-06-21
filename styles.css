@@ -108,6 +108,9 @@ html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .subtitle {
@@ -119,6 +122,9 @@ html {
     line-height: 1.6;
     position: relative;
     z-index: 2;
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 .scroll-container {
